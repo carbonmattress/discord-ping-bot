@@ -18,7 +18,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
-TRIGGER_WORDS = ["hi", "hey", "hello"]
+TRIGGER_WORDS = ["hi", "hey", "hello", "nga", "superforce", "alfusa", "bitch", "aifusa", "nija", "captain", "greetings", "salutations", "retard", "noob", "zyy", "67", "fuck", "fack", "dick"]
 
 @client.event
 async def on_ready():
