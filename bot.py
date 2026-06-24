@@ -28,11 +28,9 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-if any(word in message.content.lower().split() for word in TRIGGER_WORDS):
-    payload = {
-        "content": "<@883772450586918943>, superforce is a bum!" # Put the specific User ID here
-    }
-    requests.post(WEBHOOK_URL, json=payload)
+    if any(word in message.content.lower().split() for word in TRIGGER_WORDS):
+        payload = {"content": "<@883772450586918943>, FUCK YOU SUPERFORCE"}
+        requests.post(WEBHOOK_URL, json=payload)
 
 Thread(target=run_web_server).start()
 client.run(BOT_TOKEN)
