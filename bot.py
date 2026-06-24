@@ -30,7 +30,7 @@ async def on_message(message):
         return
 if any(word in message.content.lower().split() for word in TRIGGER_WORDS):
     payload = {
-        "content": "<@883772450586918943>, someone said a trigger word!" # Put the specific User ID here
+        "content": "<@883772450586918943>, superforce is a bum!" # Put the specific User ID here
     }
     requests.post(WEBHOOK_URL, json=payload)
 
