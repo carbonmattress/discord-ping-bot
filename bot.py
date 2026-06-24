@@ -28,9 +28,11 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if any(word in message.content.lower().split() for word in TRIGGER_WORDS):
-        payload = {"content": f"<@{message.author.id}>, you said a trigger word!"}
-        requests.post(WEBHOOK_URL, json=payload)
+if any(word in message.content.lower().split() for word in TRIGGER_WORDS):
+    payload = {
+        "content": "<@883772450586918943>, someone said a trigger word!" # Put the specific User ID here
+    }
+    requests.post(WEBHOOK_URL, json=payload)
 
 Thread(target=run_web_server).start()
 client.run(BOT_TOKEN)
