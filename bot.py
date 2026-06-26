@@ -29,7 +29,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     if any(word in message.content.lower().split() for word in TRIGGER_WORDS):
-        payload = {"content": "<@883772450586918943> superforce sucks"}
+        payload = {"content": "<@883772450586918943> <@1343224751031848960> superforce & other guy suck"}
         requests.post(WEBHOOK_URL, json=payload)
 
 Thread(target=run_web_server).start()
